@@ -13,10 +13,5 @@ namespace GamesManager.Models
         [JsonIgnore]
         public List<Game> Games{ get; set; }
 
-        public void Update(Publisher otherPublisher)
-        {
-            Title = otherPublisher.Title;
-            Games = otherPublisher.Games;
-        }
-    }
+     }
 }

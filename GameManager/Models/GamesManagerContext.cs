@@ -16,12 +16,6 @@ namespace GamesManager.Models
             Database.EnsureCreated();
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder
-        //        .UseLazyLoadingProxies();
-        //}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Game>()
@@ -109,40 +103,6 @@ namespace GamesManager.Models
                     return false;
                 }
                 Publishers.Remove(publisher);
-            }
-            else
-            {
-                return false;
-            }
-
-            SaveChanges();
-            return true;
-        }
-
-        public bool TryToUpdateItem<T>(int id,object item)
-        {
-            if (typeof(T) == typeof(Game))
-            {
-                Game gameFromDB = Games.Find(id);
-                
-                if (gameFromDB == null)
-                {
-                    return false;
-                }
-                GameGanres.RemoveRange(GameGanres.Where(gg => gg.GameId == id));
-                gameFromDB.Update((Game)item);
-            }
-            else if (typeof(T) == typeof(Publisher))
-            {
-                Publisher publisherFomDB = Publishers.Find(id);
-
-                if (publisherFomDB == null)
-                {
-                    return false;
-                }
-                publisherFomDB.Update((Publisher)item);
-
-                Entry(publisherFomDB).State = EntityState.Modified;
             }
             else
             {

@@ -11,7 +11,6 @@ namespace GamesManager.Models
         //[JsonIgnore]
         public int Id { get; set; }
 
-
         public string Title { get; set; }
         public DateTime ReleaseDate { get; set; }
 
@@ -19,12 +18,5 @@ namespace GamesManager.Models
 
         public Publisher Publisher { get; set; }
 
-        public void Update(Game otherGame)
-        {
-            Title = otherGame.Title;                // как-то через рефлексию ?
-            ReleaseDate = otherGame.ReleaseDate;
-            GameGenres = otherGame.GameGenres;
-            Publisher = otherGame.Publisher;
-        }
     }
 }
