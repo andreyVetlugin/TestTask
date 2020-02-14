@@ -37,25 +37,7 @@ namespace GamesManager.Models
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<GameGenre> GameGanres { get; set; }
         public DbSet<Genre> Genres { get; set; }
-
-        //private void UpdateModel<T>(T model1,T model2)
-        //{
-
-        //    foreach (PropertyInfo property in model1.GetType().GetProperties())
-        //    {
-
-        //        property.Name
-        //        object valuwe
-        //    }
-
-        //    object value1 = property.GetValue(this, null);
-        //    object value2 = property.GetValue(another, null);
-        //    if (!value1.Equals(value2))
-        //    {
-        //        return false;
-        //    }
-        //}
-
+        
         public bool TryToAddItem<T>(object item)
         {
             if (typeof(T) == typeof(Game))                       /// Dictionary<Type,Set>
