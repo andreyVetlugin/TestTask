@@ -1,0 +1,8 @@
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.Infrastructure.deps.json
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.Infrastructure.dll
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.AssemblyInfo.cs
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.Infrastructure.pdb
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.dll
+C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.pdb

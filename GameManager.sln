@@ -6,6 +6,10 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesManager", "GameManager\GamesManager.csproj", "{D7093CC0-7197-49F2-B3F9-79CADF5BC8D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesManager.Infrastructure", "GamesManager.Infrastructure\GamesManager.Infrastructure.csproj", "{5A834D5A-8AF9-485A-923B-A7191169EEC6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{017E1185-143F-45D5-99D4-EDFF6D778181} = {017E1185-143F-45D5-99D4-EDFF6D778181}
+		{AB9747E1-A412-4FBB-8A22-5E5D1CF018A8} = {AB9747E1-A412-4FBB-8A22-5E5D1CF018A8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{017E1185-143F-45D5-99D4-EDFF6D778181}"
 EndProject
