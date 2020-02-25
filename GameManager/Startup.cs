@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using GamesManager.Models;
 using Microsoft.EntityFrameworkCore;
-//
+
 namespace GamesManager
 {
     public class Startup
