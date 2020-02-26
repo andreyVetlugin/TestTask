@@ -14,8 +14,8 @@ namespace GamesManager.Models
         public string Title { get; set; }
         [Display(Name = "Дата релиза"),Required(ErrorMessage = "Введите Дату релиза")]
         public DateTime ReleaseDate { get; set; } //тип ???? нужна ли проверка ///на существование ? 
-        [Display(Name = "Жанры игры"), Required(ErrorMessage = "Введите хоть один игровой жанр")]
-        public string GameGenres { get; set; } //???
+        [Display(Name = "Жанры игры"), Required(ErrorMessage = "Введите хоть один игровой жанр")]  
+        public string GameGenres { get; set; } //???    //List<Genre>?
         [Display(Name = "Наименование издателя"), Required(ErrorMessage = "Введите {0}")]
         public string Publisher { get; set; }
     }

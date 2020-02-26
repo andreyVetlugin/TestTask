@@ -38,8 +38,17 @@ namespace GamesManager.Controllers
         {
             var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
             //readDbContext.GetGameModelData(form.Id); // methodExtension
+            var test = ApiModelResult.Create(result);
+            return test;
+        }
 
-            return ApiModelResult.Create(result);
+        [HttpPost]
+        [Route("Create")]
+        public IActionResult Create(GameEditForm form)
+        {
+            var result = gameEditCreateFormHandler.Handle(form, ModelState);
+
+            return new ApiOperationResult(result);
         }
 
         //[HttpPost]

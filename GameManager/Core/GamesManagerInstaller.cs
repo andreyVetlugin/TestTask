@@ -8,6 +8,8 @@ using DataLayer;
 using DataLayer.Entities;
 using DataLayer.Infrastructure.DbContexts;
 using GamesManager.Models;
+using GamesManager.Services.Handlers.Games.Create;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,11 +46,17 @@ namespace GamesManager.Core
 
             services
                 .AddScoped<IReadDbContext<IDbEntity>>(sp =>
-                    new ReadDbContext<IDbEntity>(sp.GetRequiredService<GamesContex>()))
+                    new ReadDbContext<IDbEntity>(sp.GetRequiredService<GamesContext>()))
                 .AddScoped<IWriteDbContext<IDbEntity>>(sp =>
-                    new WriteDbContext<IDbEntity>(sp.GetRequiredService<GamesContex>()))
+                    new WriteDbContext<IDbEntity>(sp.GetRequiredService<GamesContext>()))
                 .AddEntityFrameworkNpgsql()
-                .AddDbContext<GamesContex>();
+                .AddDbContext<GamesContext>();
+
+            services
+                .AddScoped<IGameEditCreateFormHandler, GameEditCreateFormHandler>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // удалить
+
             // 
             //.AddDbContext<BenefitsContext>(options => options.UseNpgsql(configuration.GetConnectionString("BenefitsContext")), ServiceLifetime.Scoped);
 
