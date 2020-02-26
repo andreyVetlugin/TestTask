@@ -27,9 +27,9 @@ namespace GamesManager.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<T>> GetItem(int id)
+        public ActionResult<T> Get(int id)
         {
-            T item = await Task.Run(()=>repository.GetItem(id));
+            T item = repository.GetItem(id);
             //T item = await repository.Items.FirstOrDefaultAsync(it => it.Id == id); !!!!!!!!!
             //return (gameRepository.Items.FirstAsync(item => item.Id == id)) ?? NotFound();
             if (item == null)

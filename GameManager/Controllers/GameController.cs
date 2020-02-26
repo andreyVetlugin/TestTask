@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataLayer.Entities;
+using DataLayer.Infrastructure.DbContexts;
+using GamesManager.ActionResults;
+using GamesManager.Infrastructure.Services;
 using GamesManager.Models;
+using GamesManager.Models.Game;
+using GamesManager.Services.Handlers.Games.Create;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,16 +16,34 @@ using Microsoft.EntityFrameworkCore;
 namespace GamesManager.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class GamesController : ApiController<Game>
+    [ApiController] //ApiErrorHandler
+    public class GamesController : Controller/*ApiController<Game>*/
     {
-        public GamesController(IRepository<Game> repo) : base(repo)
+        private readonly IGameEditCreateFormHandler gameEditCreateFormHandler;
+        //private readonly IGameCreateCreateFormHandler gameCreateCreateFormHandler;
+        private readonly IReadDbContext<IDbEntity> readDbContext;
+        private readonly IWriteDbContext<IDbEntity> writeDbContext;
+
+        
+        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditCreateFormHandler gameEditCreateFormHandler) : base(repo)
         {
-         
+            this.readDbContext = readDbContext;
+            this.writeDbContext = writeDbContext;
+            this.gameEditCreateFormHandler = gameEditCreateFormHandler;
+        }
+
+        [HttpGet]
+        [Route("getALL")]
+        public IActionResult GetAll()
+        {
+            var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
+            //readDbContext.GetGameModelData(form.Id); // methodExtension
+
+            return ApiModelResult.Create(result);
         }
 
         [HttpPost]
-        public async override Task<ActionResult<Game>> PostItem(Game item)
+        public override async Task<ActionResult<Game>> PostItem(Game item)
         {
             if (!await Task.Run(() => repository.TryToAddItem(item)))
             {
