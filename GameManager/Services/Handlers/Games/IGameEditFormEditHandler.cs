@@ -6,9 +6,9 @@ using GamesManager.Infrastructure.Services;
 using GamesManager.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace GamesManager.Services.Handlers.Games.Create
+namespace GamesManager.Services.Handlers.Games
 {
-    public interface IGameEditCreateFormHandler
+    interface IGameEditFormEditHandler
     {
         OperationResult Handle(GameEditForm form, ModelStateDictionary modelState);
     }

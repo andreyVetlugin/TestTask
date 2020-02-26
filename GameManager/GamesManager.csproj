@@ -19,8 +19,6 @@
   <ItemGroup>
     <Folder Include="Models\Game%28Удалить или кинуть сюда GameForm%29\" />
     <Folder Include="Services\Handlers\Publishers\" />
-    <Folder Include="Services\Handlers\Games\Edit\" />
-    <Folder Include="Services\Handlers\Games\Remove\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1Development_1json__JSONSchema="http://json.schemastore.org/BizTalkServerApplicationSchema" /></VisualStudio></ProjectExtensions>
