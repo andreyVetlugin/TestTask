@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace GamesManager.Models.Game
+namespace GamesManager.Models
 {
     public class GameEditForm
     {

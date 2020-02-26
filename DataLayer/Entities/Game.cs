@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DataLayer.Entities;
 
-namespace GamesManager.Models.Game
+namespace DataLayer.Entities
 {
     public class Game : IDbEntity
     {

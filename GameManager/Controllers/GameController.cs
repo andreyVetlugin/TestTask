@@ -7,10 +7,10 @@ using DataLayer.Infrastructure.DbContexts;
 using GamesManager.ActionResults;
 using GamesManager.Infrastructure.Services;
 using GamesManager.Models;
-using GamesManager.Models.Game;
 using GamesManager.Services.Handlers.Games.Create;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Game = DataLayer.Entities.Game;
 
 
 namespace GamesManager.Controllers
@@ -25,7 +25,7 @@ namespace GamesManager.Controllers
         private readonly IWriteDbContext<IDbEntity> writeDbContext;
 
         
-        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditCreateFormHandler gameEditCreateFormHandler) : base(repo)
+        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditCreateFormHandler gameEditCreateFormHandler)// : base(repo)
         {
             this.readDbContext = readDbContext;
             this.writeDbContext = writeDbContext;
@@ -33,7 +33,7 @@ namespace GamesManager.Controllers
         }
 
         [HttpGet]
-        [Route("getALL")]
+        [Route("getAll")]
         public IActionResult GetAll()
         {
             var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
@@ -42,21 +42,21 @@ namespace GamesManager.Controllers
             return ApiModelResult.Create(result);
         }
 
-        [HttpPost]
-        public override async Task<ActionResult<Game>> PostItem(Game item)
-        {
-            if (!await Task.Run(() => repository.TryToAddItem(item)))
-            {
-                return BadRequest();
-            }
+        //[HttpPost]
+        //public override async Task<ActionResult<Game>> PostItem(Game item)
+        //{
+        //    if (!await Task.Run(() => repository.TryToAddItem(item)))
+        //    {
+        //        return BadRequest();
+        //    }
 
-            return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
-        }
+        //    return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
+        //}
 
-        [HttpGet("{genre:regex(\\D)}")]
-        public async Task<ActionResult<IEnumerable<Game>>> GetItemsByGenre(string genre)
-        {
-            return await repository.Items.Where(game => game.GameGenres.Any(g => g.Genre.GenreTitle == genre)).ToListAsync();
-        }
+        //[HttpGet("{genre:regex(\\D)}")]
+        //public async Task<ActionResult<IEnumerable<Game>>> GetItemsByGenre(string genre)
+        //{
+        //    return await repository.Items.Where(game => game.GameGenres.Any(g => g.Genre.GenreTitle == genre)).ToListAsync();
+        //}
     }
 }

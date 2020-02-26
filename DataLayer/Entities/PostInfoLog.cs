@@ -11,7 +11,6 @@ namespace DataLayer.Entities
         public PostOperationType Operation { get; set; }
 
         public Guid EntityRootId { get; set; }
-
     }
 
 

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace GamesManager.Models
+namespace DataLayer.Entities
 {
     //using Genre = System.String;
     public class Publisher
@@ -12,6 +12,5 @@ namespace GamesManager.Models
 
         [JsonIgnore]
         public List<Game> Games{ get; set; }
-
-     }
+    }
 }
