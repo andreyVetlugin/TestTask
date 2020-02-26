@@ -31,14 +31,14 @@ namespace GamesManager.Models
 
         public override bool TryToAddItem(Game game)
         {
-
+            //сделать проверку на null в бд 
             Publisher publisher = context.Publishers.FirstOrDefault(p => p.Title == game.Publisher.Title);// проверяем есть ли уже в базе данных такой Publisher
 
             if (publisher != null)
             {
                 game.Publisher = publisher;
             }
-            for (int i = 0; i < game.GameGenres.Count(); i++)            // проверяем есть ли уже в базе данных такие жанры
+            for (int i = 0; game.GameGenres!=null && i < game.GameGenres.Count(); i++)            // проверяем есть ли уже в базе данных такие жанры
             {
                 Genre genre = context.Genres.FirstOrDefault(p => p.GenreTitle == game.GameGenres[i].Genre.GenreTitle);
                 if (genre != null)

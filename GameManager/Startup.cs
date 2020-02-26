@@ -31,8 +31,8 @@ namespace GamesManager
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
             // добавляем контекст MobileContext в качестве сервиса в приложение
-            services.AddDbContext<GamesManagerContext>(options =>
-                options.UseSqlServer(connection));
+            services.AddDbContext<GamesManagerContext>();//(options =>
+                //options.UseSqlServer(connection));
             //services.AddControllersWithViews();
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

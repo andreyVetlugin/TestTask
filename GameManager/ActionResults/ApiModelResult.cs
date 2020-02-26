@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using GamesManager.Infrasctructure.Services
+using GamesManager.Infrastructure.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GamesManager.ActionResults

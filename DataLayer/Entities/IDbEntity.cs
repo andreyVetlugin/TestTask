@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataLayer.Entities
 {
-    public interface IBenefitsEntity
+    public interface IDbEntity
     {
     }
 }
