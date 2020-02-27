@@ -11,3 +11,16 @@ C:\Users\Evgeniya\Desktop\Andrey\from_git_2\GamesManager.Infrastructure\bin\Debu
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.csproj.CopyComplete
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.dll
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.pdb
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\GamesManager.Infrastructure.deps.json
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\GamesManager.Infrastructure.dll
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\GamesManager.Infrastructure.pdb
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\DataLayer.dll
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\DataLayer.Infrastructure.dll
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\DataLayer.Infrastructure.pdb
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\bin\Debug\netstandard2.0\DataLayer.pdb
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.AssemblyInfo.cs
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.csproj.CopyComplete
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.dll
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\GamesManager.Infrastructure\obj\Debug\netstandard2.0\GamesManager.Infrastructure.pdb

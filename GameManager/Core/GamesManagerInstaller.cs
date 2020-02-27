@@ -8,7 +8,7 @@ using DataLayer;
 using DataLayer.Entities;
 using DataLayer.Infrastructure.DbContexts;
 using GamesManager.Models;
-using GamesManager.Services.Handlers.Games.Create;
+using GamesManager.Services.Handlers.Games;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -53,7 +53,7 @@ namespace GamesManager.Core
                 .AddDbContext<GamesContext>();
 
             services
-                .AddScoped<IGameEditCreateFormHandler, GameEditCreateFormHandler>();
+                .AddScoped<IGameEditFormCreateHandler, GameEditFormCreateHandler>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // удалить
 

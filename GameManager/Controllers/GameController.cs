@@ -7,10 +7,9 @@ using DataLayer.Infrastructure.DbContexts;
 using GamesManager.ActionResults;
 using GamesManager.Infrastructure.Services;
 using GamesManager.Models;
-using GamesManager.Services.Handlers.Games.Create;
+using GamesManager.Services.Handlers.Games;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Game = DataLayer.Entities.Game;
 
 
 namespace GamesManager.Controllers
@@ -19,21 +18,20 @@ namespace GamesManager.Controllers
     [ApiController] //ApiErrorHandler
     public class GamesController : Controller/*ApiController<Game>*/
     {
-        private readonly IGameEditCreateFormHandler gameEditCreateFormHandler;
+        private readonly IGameEditFormCreateHandler gameEditFormCreateHandler;//gameEditCreateFormHandler;
         //private readonly IGameCreateCreateFormHandler gameCreateCreateFormHandler;
         private readonly IReadDbContext<IDbEntity> readDbContext;
         private readonly IWriteDbContext<IDbEntity> writeDbContext;
 
         
-        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditCreateFormHandler gameEditCreateFormHandler)// : base(repo)
+        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditFormCreateHandler gameEditFormCreateHandler)// : base(repo)
         {
             this.readDbContext = readDbContext;
             this.writeDbContext = writeDbContext;
-            this.gameEditCreateFormHandler = gameEditCreateFormHandler;
+            this.gameEditFormCreateHandler = gameEditFormCreateHandler;
         }
 
         [HttpGet]
-        [Route("getAll")]
         public IActionResult GetAll()
         {
             var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
@@ -43,10 +41,10 @@ namespace GamesManager.Controllers
         }
 
         [HttpPost]
-        [Route("Create")]
+//      [Route("Create")]
         public IActionResult Create(GameEditForm form)
         {
-            var result = gameEditCreateFormHandler.Handle(form, ModelState);
+            var result = gameEditFormCreateHandler.Handle(form, ModelState);
 
             return new ApiOperationResult(result);
         }
