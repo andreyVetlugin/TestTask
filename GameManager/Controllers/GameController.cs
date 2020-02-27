@@ -19,12 +19,12 @@ namespace GamesManager.Controllers
     public class GamesController : Controller/*ApiController<Game>*/
     {
         private readonly IGameEditFormCreateHandler gameEditFormCreateHandler;//gameEditCreateFormHandler;
-        //private readonly IGameCreateCreateFormHandler gameCreateCreateFormHandler;
+        private readonly GameEditFormEditHandler gameEditFormFormEditHandler;
         private readonly IReadDbContext<IDbEntity> readDbContext;
         private readonly IWriteDbContext<IDbEntity> writeDbContext;
 
-        
-        public GamesController(IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext,IGameEditFormCreateHandler gameEditFormCreateHandler)// : base(repo)
+
+        public GamesController(IReadDbContext<IDbEntity> readDbContext, IWriteDbContext<IDbEntity> writeDbContext, IGameEditFormCreateHandler gameEditFormCreateHandler)// : base(repo)
         {
             this.readDbContext = readDbContext;
             this.writeDbContext = writeDbContext;
@@ -34,36 +34,23 @@ namespace GamesManager.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            
-            var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
-
-
-            //handler в котором будет связываться данные с игрой
-
-            //readDbContext.GetGameModelData(form.Id); // methodExtension
-            var test = ApiModelResult.Create(result);
-            return test;
+            var result = ModelDataResult<List<GameEditForm>>.BuildSucces(GameEditForm.CreateFromGamesIntoDb(readDbContext).ToList());
+            return ApiModelResult.Create(result);
         }
 
         [HttpPost]
-//      [Route("Create")]
         public IActionResult Create(GameEditForm form)
         {
             var result = gameEditFormCreateHandler.Handle(form, ModelState);
-
             return new ApiOperationResult(result);
         }
 
-        //[HttpPost]
-        //public override async Task<ActionResult<Game>> PostItem(Game item)
-        //{
-        //    if (!await Task.Run(() => repository.TryToAddItem(item)))
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
-        //}
+        [HttpPut]
+        public IActionResult Edit(GameEditForm form)
+        {
+            
+            return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
+        }
 
         //[HttpGet("{genre:regex(\\D)}")]
         //public async Task<ActionResult<IEnumerable<Game>>> GetItemsByGenre(string genre)

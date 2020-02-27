@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
+    "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
         "projectName": "DataLayer.Infrastructure",
-        "projectPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,24 +66,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -132,24 +132,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj": {
+    "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj",
         "projectName": "GamesManager.Infrastructure",
-        "projectPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\GamesManager.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\GamesManager.Infrastructure\\GamesManager.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\GamesManager.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -162,11 +162,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj"
+              "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj"
               },
-              "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Evgeniya\\Desktop\\Andrey\\from_git_2\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Dell\\Desktop\\TestFromWorkday2\\TestTask\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -201,7 +201,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
