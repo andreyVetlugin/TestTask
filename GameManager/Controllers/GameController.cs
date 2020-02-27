@@ -34,7 +34,12 @@ namespace GamesManager.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            
             var result = ModelDataResult<List<Game>>.BuildSucces(readDbContext.Get<Game>().ToList());
+
+
+            //handler в котором будет связываться данные с игрой
+
             //readDbContext.GetGameModelData(form.Id); // methodExtension
             var test = ApiModelResult.Create(result);
             return test;

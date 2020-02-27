@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Entities
 {
-    public class GameGenre
+    public class GameGenre : IDbEntity
     {
         [JsonIgnore]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [JsonIgnore]
-        public int GameId { get; set; }
+        public Guid GameId { get; set; }
         [JsonIgnore]
         public Game Game { get; set; }
 
         [JsonIgnore]
-        public int GenreId { get; set; }
+        public Guid GenreId { get; set; }
         public Genre Genre { get; set; }
     }
 }

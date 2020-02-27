@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Entities
 {
-    public class Genre
+    public class Genre : IDbEntity
     {
         [JsonIgnore]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string GenreTitle { get; set; }
 
         [JsonIgnore]

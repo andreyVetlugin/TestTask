@@ -1,13 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace DataLayer.Entities
 {
-    //using Genre = System.String;
-    public class Publisher
+    public class Publisher : IDbEntity
     {
         [JsonIgnore]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Title { get; set; } 
 
         [JsonIgnore]

@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Список пользователей</title>
+    <title>Игры!!!!</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <h2>Игры:</h2>
-    <form name="userForm">
-        <input type="hidden" name="id" value="0" />
+    <form name="gamesForm">
+        <input type="hidden" name="id" value="-1" />
         <div class="form-group col-md-5">
-            <label for="name">Название:</label>
+            <label for="title">Название:</label>
             <input class="form-control" name="title" />
         </div>
         <div class="form-group col-md-5">
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group col-md-5">
             <label for="releaseDate">Дата релиза:</label>
-            <input class="form-control" name="releaseDate" type="datetime-local" />
+            <input class="form-control" name="releaseDate" type="date" />
         </div>
         <div class="form-group col-md-5">
             <label for="publlisher">Издатель:</label>
@@ -32,30 +32,186 @@
         </div>
     </form>
     <table class="table table-condensed table-striped  col-md-6">
-        <thead><tr><th>Id</th><th>Название</th><th>Жанры</th><th></th></tr></thead>
+        <thead><tr><th>Id</th><th>Название</th><th>Жанры</th><th>Дата релиза</th><th>Издатель</th></tr></thead>
         <tbody>
         </tbody>
     </table>
-    <script>
-        async function GetGames() {
-            // отправляет запрос и получаем ответ
-            const response = await fetch("/api/games", {
-                method: "GET",
-                headers: { "Accept": "application/json" }
+<script>
+
+    async function GetGames() {
+        // отправляет запрос и получаем ответ
+        const response = await fetch("/api/games", {
+            method: "GET",
+            headers: { "Accept": "application/json" }
+        });
+        // если запрос прошел нормально
+        if (response.ok === true) {
+            // получаем данные
+            const games = await response.json();
+            let rows = document.querySelector("tbody");
+            games.forEach(game => {
+                //allert(games)
+                // добавляем полученные элементы в таблицу
+                rows.append(row(game));
             });
-            // если запрос прошел нормально
-            if (response.ok === true) {
-                // получаем данные
-                const gameForms = await response.json();
-                let rows = document.querySelector("tbody");
-                gameForms.forEach(gameForm => {
-                    allert(gameForm)
-                    // добавляем полученные элементы в таблицу
-                    rows.append(row(userForm));
-                });
-            }
         }
+    }
+
+    async function GetGame(id) {
+        const response = await fetch("/api/games/" + id, {  //!!!!!!!!!!!!!!!!!!!
+            method: "GET",
+            headers: { "Accept": "application/json" }
+        });
+        //if (response.ok === true) {
+        //    const user = await response.json();
+        //    const form = document.forms["usersForm"];
+        //    form.elements["id"].value = user.id;
+        //    form.elements["name"].value = user.name;
+        //    form.elements["age"].value = user.age;
+        //}
+    }
+
+
+    async function CreateGame(title, releaseDate,genres,publisher) {
+
+        const response = await fetch("api/games", {
+            method: "POST",
+            headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify({
+                Title: title,
+                ReleaseDate: releaseDate,
+                GameGenres: genres,
+                Publisher: publisher
+            })
+        });
+
+        if (response.ok === true) {                 ///////////// !!!!!!!!!!!!! если фолс, то очистить поля и вывести ошибку полученную
+            alert("created");
+            //const user = await response.json();
+            //reset();
+            //document.querySelector("tbody").append(row(user));
+        }
+    }
+
+    async function EditGame(gameId, title, releaseDate, genres, publisher) {
+        const response = await fetch("api/games", {
+            method: "PUT",
+            headers: { "Accept": "application/json", "Content-Type": "application/json" },
+            body: JSON.stringify({
+                Id: parseInt(gameId, 10),
+                Title: title,
+                ReleaseDate: releaseDate,
+                Genres: genres,
+                Publisher: publisher
+            })
+        });
+        if (response.ok === true) {          /////////// если фолс - вывести ошибку 
+            alert("edit");
+            //const user = await response.json();
+            //reset();
+            //document.querySelector("tr[data-rowid='" + user.id + "']").replaceWith(row(user));
+        }
+    }
+
+    async function DeleteGame(id) {
+        const response = await fetch("/api/games/" + id, {
+            method: "DELETE",
+            headers: { "Accept": "application/json" }
+        });
+        //if (response.ok === true) {
+        //    //const user = await response.json();
+        //    //document.querySelector("tr[data-rowid='" + user.id + "']").remove();
+        //}
+    }
+
+    function reset() {
+        const form = document.forms["gamesForm"];
+        form.reset();
+        form.elements["id"].value = -1;
+    }
+
+
+    // создание строки для таблицы
+    function row(game) {
+ 
+        const tr = document.createElement("tr");
+        tr.setAttribute("data-rowid", game.Id);
+ 
+        const idTd = document.createElement("td");
+        idTd.append(game.id);
+        tr.append(idTd);
+ 
+        const titleTd = document.createElement("td");
+        titleTd.append(game.title);
+        tr.append(titleTd);
+ 
+        const genresTd = document.createElement("td");
+        genresTd.append(game.gameGenres);
+        tr.append(genresTd);
+
+        const dateId = document.createElement("td");
+        dateId.append(game.releaseDate);
+        tr.append(dateId);
+
+        const genreId = document.createElement("td");
+        genreId.append(game.publisher);
+        tr.append(genreId);
+             
+        const linksTd = document.createElement("td");
+ 
+        const editLink = document.createElement("a");
+        editLink.setAttribute("data-id", game.Id);
+        editLink.setAttribute("style", "cursor:pointer;padding:15px;");
+        editLink.append("Изменить");
+        editLink.addEventListener("click", e => {
+            e.preventDefault();
+            GetGame(game.Id);
+        });
+        linksTd.append(editLink);
+ 
+        const removeLink = document.createElement("a");
+        removeLink.setAttribute("data-id", game.Id);
+        removeLink.setAttribute("style", "cursor:pointer;padding:15px;");
+        removeLink.append("Удалить");
+        removeLink.addEventListener("click", e => {
+ 
+            e.preventDefault();
+            DeleteGame(game.Id);
+        });
+ 
+        linksTd.append(removeLink);
+        tr.appendChild(linksTd);
+ 
+        return tr;
+    }
+
+
+    // сброс значений формы
+    document.getElementById("reset").click(function (e) {
+ 
+        e.preventDefault();
+        reset();
+    })
+ 
+    // отправка формы
+    document.forms["gamesForm"].addEventListener("submit", e => {
+        e.preventDefault();
+        const form = document.forms["gamesForm"];
+        const id = form.elements["id"].value;
+        const title = form.elements["title"].value;
+        const releaseDate = form.elements["releaseDate"].value;
+        const genres = form.elements["genres"].value;
+        const publisher = form.elements["publisher"].value;
+
+        if (id == -1)
+            CreateGame(title, releaseDate, genres, publisher);
+        else
+            EditGame(id, title, releaseDate, genres, publisher);
+    });
+
+
+
     GetGames();
-    </script>
+</script>
 </body>
 </html>

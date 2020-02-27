@@ -9,7 +9,7 @@ namespace GamesManager.Models
 {
     public class GameEditForm
     {
-        public Guid? Id { get; set; }
+        public Guid Id { get; set; }
         [Display(Name = "Название игры"),Required(ErrorMessage = "Введите {0}")]
         public string Title { get; set; }
         [Display(Name = "Дата релиза"),Required(ErrorMessage = "Введите Дату релиза")]

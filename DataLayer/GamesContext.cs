@@ -20,7 +20,25 @@ namespace DataLayer
         public GamesContext(DbContextOptions<GamesContext> options) 
             : base(options)
         {
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Game>()
+                .HasOne(g => g.Publisher)
+                .WithMany(p => p.Games);
+
+            modelBuilder.Entity<GameGenre>()
+                .HasOne(gg => gg.Game)
+                .WithMany(game => game.GameGenres)
+                .HasForeignKey(gg => gg.GameId);
+
+            modelBuilder.Entity<GameGenre>()
+                .HasOne(gg => gg.Genre)
+                .WithMany(genre => genre.GameGenres)
+                .HasForeignKey(gg => gg.GenreId);
         }
     }
 }

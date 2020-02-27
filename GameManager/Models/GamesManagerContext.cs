@@ -101,17 +101,17 @@ namespace GamesManager.Models
             return true;
         }
 
-        public T GetValue<T>(int id)
-        {
-            if (typeof(T) == typeof(Game))
-            {
-                return (T)(Games.Include(g=>g.Publisher).Include(g=>g.GameGenres).ThenInclude(g=>g.Genre).FirstOrDefault(p=> p.Id == id) as object);
-            }
-            else if (typeof(T) == typeof(Publisher))
-            {
-                return (T)(Publishers.Find(id) as object);
-            }
-            return default(T);
-        }
+        //public T GetValue<T>(int id)
+        //{
+        //    if (typeof(T) == typeof(Game))
+        //    {
+        //        return (T)(Games.Include(g=>g.Publisher).Include(g=>g.GameGenres).ThenInclude(g=>g.Genre).FirstOrDefault(p=> p.Id == id) as object);
+        //    }
+        //    else if (typeof(T) == typeof(Publisher))
+        //    {
+        //        return (T)(Publishers.Find(id) as object);
+        //    }
+        //    return default(T);
+        //}
     }
 }
