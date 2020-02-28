@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<!---->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ct="http://www.ukmv.ru/Schemas/CommonTypes" xmlns:pfrct="http://www.ukmv.ru/Schemas/PfrCommonTypes" targetNamespace="http://www.ukmv.ru/Schemas/PfrCommonTypes" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:import namespace="http://www.ukmv.ru/Schemas/CommonTypes" schemaLocation="../CommonTypes/CommonTypes.xsd"/>
+	<!--Общие простые типы-->
+	<xs:simpleType name="GeneralDocumentKindType">
+		<xs:annotation>
+			<xs:documentation>Тип документа, удостоверяющего личность.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="ct:EnumerationType">
+			<xs:enumeration value="PassportRF">
+				<xs:annotation>
+					<xs:documentation>Паспорт РФ</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ForeignPassport">
+				<xs:annotation>
+					<xs:documentation>Паспорт иностранного гражданина</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ResidencePermitRF">
+				<xs:annotation>
+					<xs:documentation>Вид на жительство в РФ</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="InternationalPassportRF">
+				<xs:annotation>
+					<xs:documentation>Загранпаспорт</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="MilitaryPassport">
+				<xs:annotation>
+					<xs:documentation>Военный билет</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SailorPassport">
+				<xs:annotation>
+					<xs:documentation>Паспорт моряка</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SovietPassport">
+				<xs:annotation>
+					<xs:documentation>Паспорт СССР</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BirthCertificate">
+				<xs:annotation>
+					<xs:documentation>Свидетельство о рождении</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="DrivingLicenseRF">
+				<xs:annotation>
+					<xs:documentation>Водительское удостоверение РФ</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ReleaseCertificate">
+				<xs:annotation>
+					<xs:documentation>Справка об освобождении</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PassportLossCertificate">
+				<xs:annotation>
+					<xs:documentation>Справка об утере паспорта</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Form9Certificate">
+				<xs:annotation>
+					<xs:documentation>Справка о регистрации по форме</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TemporaryIdentityCardRF">
+				<xs:annotation>
+					<xs:documentation>Временное удостоверение личности гражданина РФ по форме 2П</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumberOfMonthsType">
+		<xs:annotation>
+			<xs:documentation>Количество месяцев</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="ct:NumberPositiveType">
+			<xs:maxInclusive value="1200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EgissoCodeType">
+		<xs:annotation>
+			<xs:documentation>Код, присвоенный отправителю запроса при регистрации в ЕГИССО</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="ct:StringType">
+			<xs:pattern value="[0-9]{4}[.][0-9]{6}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IssuerRussianType">
+		<xs:annotation>
+			<xs:documentation>Кем выдан документ, удостоверяющий личность.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="ct:RussianTextAndNumbers">
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--Общие составные типы-->
+	<xs:complexType name="BirthPlaceType">
+		<xs:annotation>
+			<xs:documentation>Место рождения</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PlaceType" type="ct:StringShortType">
+				<xs:annotation>
+					<xs:documentation>Тип места рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Country" type="ct:StringShortType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Страна</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Region" type="ct:RegionNameType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Регион</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="District" type="ct:StringShortType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Район</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Settlement" type="ct:StringShortType">
+				<xs:annotation>
+					<xs:documentation>Город</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DocumentKindType">
+		<xs:annotation>
+			<xs:documentation>Тип документа, удостоверяющего личность.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="GeneralDocumentKind" type="pfrct:GeneralDocumentKindType">
+				<xs:annotation>
+					<xs:documentation>Общепринятые типы документов, удостоверяющих личность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OtherDocumentKind" type="ct:StringMiddleType">
+				<xs:annotation>
+					<xs:documentation>Иные типы документов, удостоверяющих личность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="IdentityDocumentType">
+		<xs:annotation>
+			<xs:documentation>Документ, удостоверяющий личность</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DocumentKind" type="pfrct:DocumentKindType">
+				<xs:annotation>
+					<xs:documentation>Тип документа, удостоверяющего личность.</xs:documentation>
+					<xs:appinfo>
+						<Element Caption="Вид документа, удостоверяющего личность"/>
+						<ViewControl>
+							<NsiText ReferenceBook="loc24"/>
+						</ViewControl>
+						<EditControl>
+							<NsiDropdownList ReferenceBook="loc24"/>
+						</EditControl>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Series" type="ct:SeriesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Серия</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Number" type="ct:StringType">
+				<xs:annotation>
+					<xs:documentation>Номер</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IssueDate" type="ct:DateGeneralType">
+				<xs:annotation>
+					<xs:documentation>Дата выдачи</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Issuer" type="ct:IssuerType">
+				<xs:annotation>
+					<xs:documentation>Кем выдан</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MessagesType">
+		<xs:annotation>
+			<xs:documentation>Перечень сообщений об ошибках и предупреждений (при наличии)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MessageType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Тип сообщения</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="ct:EnumerationType">
+						<xs:enumeration value="1">
+							<xs:annotation>
+								<xs:documentation>«1» - Ошибка</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="2">
+							<xs:annotation>
+								<xs:documentation>«2» - Предупреждение</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RuleCode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Код нарушенного правила проверки</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="ct:StringType">
+						<xs:pattern value="\d{3}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Report">
+				<xs:annotation>
+					<xs:documentation>Сообщение об ошибке или предупреждении</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="ct:StringType">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentDetailType">
+		<xs:annotation>
+			<xs:documentation>Детализация выплаты</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Type" type="ct:StringType">
+				<xs:annotation>
+					<xs:documentation>Вид выплаты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Base" type="ct:StringType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Основание назначения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sum" type="ct:DecimalType">
+				<xs:annotation>
+					<xs:documentation>Сумма выплаты</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PaymentType">
+		<xs:annotation>
+			<xs:documentation>Выплата</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="MonthYear" type="ct:MonthYearType" nillable="false">
+				<xs:annotation>
+					<xs:documentation>Месяц и год</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PaymentDataGroup" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Данные по выплате</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="pfrct:PaymentDetailType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProtocolType">
+		<xs:annotation>
+			<xs:documentation>Протокол загрузки и проверки пакета данных</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PackageID" type="ct:GuidType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Идентификатор пакета данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PackageType" type="ct:StringShortType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Тип пакета данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PackageStatus">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Статус обработки пакета данных</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="ct:EnumerationType">
+						<xs:enumeration value="1">
+							<xs:annotation>
+								<xs:documentation>«1» - принят</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="2">
+							<xs:annotation>
+								<xs:documentation>«2» - обрабатывается</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="3">
+							<xs:annotation>
+								<xs:documentation>«3» - обработан</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ReceivingTime" type="ct:DateTimeGeneralType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Дата и время приема пакета данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="StartProcessingTime" type="ct:DateTimeGeneralType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Дата и время начала обработки пакета данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FinishProcessingTime" type="ct:DateTimeGeneralType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Дата и время окончания обработки пакета данных</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RecordNum" type="ct:PositiveIntegerType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Количество элементов, принятых в составе пакета</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SuccessRecordNum" type="ct:PositiveIntegerType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Количество успешно обработанных  элементов</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ErrorRecords" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Перечень ошибочных элементов</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RecordResult" type="pfrct:RecordResultType" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Результат обработки записи пакета данных</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RecordResultType">
+		<xs:annotation>
+			<xs:documentation>Результат обработки записи пакета данных</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="RecordID" type="ct:GuidType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Идентификатор элемента</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RecordTransferOk" type="ct:BooleanType">
+				<xs:annotation>
+					<xs:documentation xml:lang="ru">Признак, что запись передана в ПОЗ или завершилась с ошибкой</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Messages" type="pfrct:MessagesType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Перечень сообщений об ошибках и предупреждений (при наличии)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SnilsOwnerInfoType">
+		<xs:annotation>
+			<xs:documentation>Сведения о владельце СНИЛС</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BirthPlace" type="pfrct:BirthPlaceType">
+				<xs:annotation>
+					<xs:documentation>Место рождения</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="IdentityDocument" type="pfrct:IdentityDocumentType">
+				<xs:annotation>
+					<xs:documentation>Документ, удостоверяющий личность</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

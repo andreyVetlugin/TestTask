@@ -33,7 +33,7 @@
         </div>
     </form>
     <table class="table table-condensed table-striped  col-md-6">
-        <thead><tr><th>Название</th><th>Жанры</th><th>Дата релиза</th><th>Издатель</th></tr></thead>
+        <thead><tr><th>Id</th><th>Название</th><th>Жанры</th><th>Дата релиза</th><th>Издатель</th></tr></thead>
         <tbody>
         </tbody>
     </table>
@@ -51,7 +51,6 @@
                 const games = await response.json();
                 let rows = document.querySelector("tbody");
                 games.forEach(game => {
-                    //allert(games)
                     // добавляем полученные элементы в таблицу
                     rows.append(row(game));
                 });
@@ -63,13 +62,24 @@
                 method: "GET",
                 headers: { "Accept": "application/json" }
             });
-            //if (response.ok === true) {
-            //    const user = await response.json();
-            //    const form = document.forms["usersForm"];
-            //    form.elements["id"].value = user.id;
-            //    form.elements["name"].value = user.name;
-            //    form.elements["age"].value = user.age;
-            //}
+            if (response.ok === true) {
+                const game = await response.json();
+                const form = document.forms["gamesForm"];
+                form.elements["id"].value = game.id;
+                form.elements["title"].value = game.title;
+                form.elements["genres"].value = game.gameGenres;
+                form.elements["releaseDate"].value = game.releaseDate;
+                //let releasedate = Date(game.releaseDate)
+                //let date = ''+releasedate.getFullYear()+'-'+releasedate.getMonth()+'-'+releasedate.getDate();
+                //form.elements["releaseDate"].value = date;
+                form.elements["publisher"].value = game.publisher;
+            } else {
+                const errorData = await response.json();
+                console.log("errors", errorData);
+                if (errorData) {
+                    alert("ошибка в гет геймы");
+                }
+            }
         }
 
 
@@ -88,9 +98,10 @@
 
             if (response.ok === true) {                 ///////////// !!!!!!!!!!!!! если фолс, то очистить поля и вывести ошибку полученную
                
-                //const user = await response.json();
-                //reset();
-                //document.querySelector("tbody").append(row(user));
+                //const game = await response.json();
+                reset();
+                location.reload();
+                //document.querySelector("tbody").append(row(game));
             }
             else {
                 const errorData = await response.json();
@@ -120,21 +131,23 @@
         }
 
         async function EditGame(gameId, title, releaseDate, genres, publisher) {
+            resetErrors();
             const response = await fetch("api/games", {
                 method: "PUT",
                 headers: { "Accept": "application/json", "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    Id: parseInt(gameId, 10),
+                    Id: gameId,
                     Title: title,
                     ReleaseDate: releaseDate,
-                    Genres: genres,
+                    GameGenres: genres,
                     Publisher: publisher
                 })
             });
+
             if (response.ok === true) {          /////////// если фолс - вывести ошибку                
                 //const game = await response.json();
                 reset();
-                //GetGames();
+                location.reload();
                 //document.querySelector("tr[data-rowid='" + user.id + "']").replaceWith(row(user));
             }
         }
@@ -175,9 +188,9 @@
             const tr = document.createElement("tr");
             tr.setAttribute("data-rowid", game.Id);
 
-            //const idTd = document.createElement("td");
-            //idTd.append(game.id);
-            //tr.append(idTd);
+            const idTd = document.createElement("td");
+            idTd.append(game.id);
+            tr.append(idTd);
 
             const titleTd = document.createElement("td");
             titleTd.append(game.title);
@@ -198,23 +211,23 @@
             const linksTd = document.createElement("td");
 
             const editLink = document.createElement("a");
-            editLink.setAttribute("data-id", game.Id);
+            editLink.setAttribute("data-id", game.id);
             editLink.setAttribute("style", "cursor:pointer;padding:15px;");
             editLink.append("Изменить");
             editLink.addEventListener("click", e => {
                 e.preventDefault();
-                GetGame(game.Id);
+                GetGame(game.id);
             });
             linksTd.append(editLink);
 
             const removeLink = document.createElement("a");
-            removeLink.setAttribute("data-id", game.Id);
+            removeLink.setAttribute("data-id", game.id);
             removeLink.setAttribute("style", "cursor:pointer;padding:15px;");
             removeLink.append("Удалить");
             removeLink.addEventListener("click", e => {
 
                 e.preventDefault();
-                DeleteGame(game.Id);
+                DeleteGame(game.id);
             });
 
             linksTd.append(removeLink);

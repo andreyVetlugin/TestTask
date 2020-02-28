@@ -4,37 +4,40 @@ using GamesManager.Infrastructure.Services;
 using GamesManager.Models;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Linq;
+using DataLayer.Infrastructure;
+using GamesManager.Models.Games;
 
 namespace GamesManager.Services.Handlers.Games
 {
-    class GameEditFormEditHandler:GameEditFormBaseHandler
+    public class GameEditFormEditHandler:GameEditFormBaseHandler
     {
-        private IReadDbContext<IDbEntity> readDbContext; //все хендлеры хранят то же самое, имеют тот же конструтор и 
-        private IWriteDbContext<IDbEntity> writeDbCOntext;  // 
-
-        public GameEditFormEditHandler(IReadDbContext<IDbEntity> readDBContext, IWriteDbContext<IDbEntity> writeDbContext):base(writeDbContext,readDBContext)
+        public GameEditFormEditHandler(IReadDbContext<IDbEntity> readDbContext, IWriteDbContext<IDbEntity> writeDbContext):base(writeDbContext,readDbContext)
         { 
             
         }
 
-        public override OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
+        public OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
         {
+            
             if (!modelState.IsValid)
                 return OperationResult.BuildFormError("Ошибка. Проверьте формат введеных данных");
 
             var game = readDbContext.Get<Game>()
+                //.IncludeDependencies()
                 .FirstOrDefault(g => g.Id == form.Id);
+            
 
-            if(game == null)
+            if (game == null)
             {
                 modelState.AddModelError("Id", "Такого Id не существует");
-                return OperationResult.BuildFormError("Ошибка. Проверьте формат введеных данных");
+                return OperationResult.BuildFormError("Такого Id не существует");
             }
 
-            var result = GameEditForm.JoinDependenciesToGameFromDb(game, form, readDbContext); // использовать как-то этот operationResult?
-            
+            //game.GameGenres.Clear();
+            var result = GameEditForm.JoinDependenciesToExistingGame(game, form, readDbContext,writeDbContext); // использовать как-то этот operationResult?
+            // особенно то что пишем в разные контексты ??? можно если что в врайт контексте поставить эдитед ? 
             //return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
-            return OperationResult.BuildSuccess(UnitOfWork.Complex(result, UnitOfWork.WriteDbContext(writeDbContext)));//ReadDbContext????
+            return OperationResult.BuildSuccess(UnitOfWork.Complex(UnitOfWork.WriteDbContext(writeDbContext)));//ReadDbContext????
         }
     }
 }

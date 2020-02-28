@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GamesManager.Models.Games;
 
 namespace GamesManager.Services.Handlers.Games
 {
@@ -20,7 +21,5 @@ namespace GamesManager.Services.Handlers.Games
             this.readDbContext = readDbContext;
             this.writeDbContext = writeDbContext; 
         }
-
-        public abstract OperationResult Handle(GameEditForm form, ModelStateDictionary modelState);
     }
 }

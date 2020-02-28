@@ -1,0 +1,189 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #35296b;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Rubik-Black';
+    src: url('/fonts/Rubik-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-BlackItalic';
+    src: url('/fonts/Rubik-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('/fonts/Rubik-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-BoldItalic';
+    src: url('/fonts/Rubik-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Italic';
+    src: url('/fonts/Rubik-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Light';
+    src: url('/fonts/Rubik-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-LightItalic';
+    src: url('/fonts/Rubik-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('/fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-MediumItalic';
+    src: url('/fonts/Rubik-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('/fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+/* Заголовки */
+
+h1 {
+    font-size: 24pt;
+    color: #ffffff;
+    font-family: 'Rubik-Medium';
+    font-weight: normal;
+    margin: 64px 0 32px;
+    line-height: 32pt;
+}
+
+h2 {
+    font-size: 14pt;
+    color: #ffffff;
+    font-family: 'Rubik-Light';
+    font-weight: normal;
+    margin: 32px 0;
+    line-height: 20pt;
+}
+
+h3 {
+    font-size: 14pt;
+    color: #cf90ff;
+    font-family: 'Rubik-Light';
+    font-weight: normal;
+    margin: 16px 0;
+    line-height: 20pt;
+}
+
+h4 {
+    font-size: 12pt;
+    color: #ffffff;
+    font-family: 'Rubik-Light';
+    font-weight: normal;
+    margin: 16px 0;
+    line-height: 16pt;
+}
+
+h5 {
+    font-size: 12pt;
+    color: #c6bcee;
+    font-family: 'Rubik-Light';
+    font-weight: normal;
+    margin: 16px 0;
+    line-height: 18pt;
+}
+
+p {
+    font-size: 12pt;
+    color: #c6bcee;
+    font-family: 'Rubik-Light';
+    font-weight: normal;
+    margin: 24px 0;
+    line-height: 16pt;
+}
+
+
+input {
+    -moz-appearance: textfield;
+    outline: none;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+input[disabled],
+input[readonly] {
+    cursor: not-allowed;
+}
+
+.pointer-cursor {
+    cursor: pointer;
+}
+.shadow_medium {
+    box-shadow: #1e1542 0 4px 16px 0;
+}
+.shadow_light {
+    box-shadow: #1e1542 0 2px 16px 0;
+}
+
+
+.page_layout {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    height: calc(100% - 32px);
+    margin: 16px 0;
+}
+.command_menu {
+    width: 64px;
+    height: 100%;
+    margin: 0 16px;
+}
+.command_menu button {
+  margin-bottom: 8px;
+}
+
+
+
+.width-240 {
+  width: 240px !important;
+  flex-basis: 240px !important;
+}
+.width-200 {
+  width: 200px !important;
+  flex-basis: 200px !important;
+}
+.width-180 {
+  width: 180px !important;
+  flex-basis: 180px !important;
+}
+.width-160 {
+  width: 160px !important;
+  flex-basis: 160px !important;
+}
+.width-140 {
+  width: 140px !important;
+  flex-basis: 140px !important;
+}
+.margin-left-50 {
+  margin-left: 50px !important;
+}
+
+.date_delimeter {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}

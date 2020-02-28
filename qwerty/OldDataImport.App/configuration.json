@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "BenefitsContext": "Host=localhost;Port=5432;Username=postgres;Password=1;Database=ais_bfs;"
+  }
+}

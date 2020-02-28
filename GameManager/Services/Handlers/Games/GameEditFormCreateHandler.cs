@@ -2,8 +2,9 @@
 using DataLayer.Entities;
 using DataLayer.Infrastructure.DbContexts;
 using GamesManager.Infrastructure.Services;
-using GamesManager.Models;
+using GamesManager.Models.Games;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Rewrite.Internal.ApacheModRewrite;
 
 namespace GamesManager.Services.Handlers.Games
 {
@@ -13,7 +14,7 @@ namespace GamesManager.Services.Handlers.Games
         {
         }        
         
-        public override OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
+        public OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
         {
             if (!modelState.IsValid)
                 return OperationResult.BuildFormError("Ошибка. Проверьте формат введеных данных");
@@ -25,10 +26,10 @@ namespace GamesManager.Services.Handlers.Games
                 ReleaseDate = form.ReleaseDate
             };
 
-            var result = GameEditForm.JoinDependenciesToGameFromDb(game, form,readDbContext); // использовать как-то этот operationResult?
+            var result = GameEditForm.JoinDependenciesToExistingGame(game, form,readDbContext,writeDbContext); // использовать как-то этот operationResult?
             writeDbContext.Add(game);
             //return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
-            return OperationResult.BuildSuccess(UnitOfWork.Complex(result,UnitOfWork.WriteDbContext(writeDbContext)));
+            return OperationResult.BuildSuccess(UnitOfWork.Complex(result,UnitOfWork.WriteDbContext(writeDbContext))); // проверить сохраняется ли в бд
         }
     }
 }

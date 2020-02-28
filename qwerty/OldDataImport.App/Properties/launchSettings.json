@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OldDataImport.App": {
+      "commandName": "Project",
+      "commandLineArgs": "-dropdb"
+    }
+  }
+}

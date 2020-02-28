@@ -53,7 +53,11 @@ namespace GamesManager.Core
                 .AddDbContext<GamesContext>();
 
             services
-                .AddScoped<IGameEditFormCreateHandler, GameEditFormCreateHandler>();
+                .AddScoped<IGameEditFormCreateHandler, GameEditFormCreateHandler>()
+                .AddScoped<GameEditFormGetHandler>()
+                .AddScoped<GameEditFormEditHandler>()
+                .AddScoped<GameEditFormGetAllHandler>()
+                .AddScoped<GameEditFormRemoveHandler>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // удалить
 

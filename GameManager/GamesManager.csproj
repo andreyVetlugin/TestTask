@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Game%28Удалить или кинуть сюда GameForm%29\" />
     <Folder Include="Services\Handlers\Publishers\" />
   </ItemGroup>
 

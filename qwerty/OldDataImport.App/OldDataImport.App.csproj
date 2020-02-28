@@ -1,0 +1,193 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="configuration.json" />
+    <None Remove="Data\Source\DocumTip.dbf" />
+    <None Remove="Data\Source\doplata.dbf" />
+    <None Remove="Data\Source\FUNSPR.DBF" />
+    <None Remove="Data\Source\IM.DBF" />
+    <None Remove="Data\Source\IMG.DBF" />
+    <None Remove="Data\Source\IMM.DBF" />
+    <None Remove="Data\Source\LORAPTABLE.DBF" />
+    <None Remove="Data\Source\mds.dbf" />
+    <None Remove="Data\Source\NSPTIP.DBF" />
+    <None Remove="Data\Source\OTC.DBF" />
+    <None Remove="Data\Source\OTCG.DBF" />
+    <None Remove="Data\Source\otcm.dbf" />
+    <None Remove="Data\Source\OTCSPL.DBF" />
+    <None Remove="Data\Source\PfrRequests\pfrrequests.rar" />
+    <None Remove="Data\Source\PfrRequests\pfrrequests.zip" />
+    <None Remove="Data\Source\PODPISI.DBF" />
+    <None Remove="Data\Source\raion.dbf" />
+    <None Remove="Data\Source\RAITIP.DBF" />
+    <None Remove="Data\Source\RECORDS.DBF" />
+    <None Remove="Data\Source\reestr.dbf" />
+    <None Remove="Data\Source\regiontip.dbf" />
+    <None Remove="Data\Source\regreest.dbf" />
+    <None Remove="Data\Source\REGSVDRE.DBF" />
+    <None Remove="Data\Source\reshenie.dbf" />
+    <None Remove="Data\Source\SOBESY.DBF" />
+    <None Remove="Data\Source\stag.dbf" />
+    <None Remove="Data\Source\SVODREES.DBF" />
+    <None Remove="Data\Source\ULCTIP.DBF" />
+    <None Remove="Data\Source\vocdolg.dbf" />
+    <None Remove="Data\Source\VocGorod.dbf" />
+    <None Remove="Data\Source\VocIndex.dbf" />
+    <None Remove="Data\Source\VOCNASP.DBF" />
+    <None Remove="Data\Source\vocnsp.dbf" />
+    <None Remove="Data\Source\vocorg.dbf" />
+    <None Remove="Data\Source\vocpspkem.dbf" />
+    <None Remove="Data\Source\vocraion.dbf" />
+    <None Remove="Data\Source\vocregion.dbf" />
+    <None Remove="Data\Source\vocstrana.dbf" />
+    <None Remove="Data\Source\voculic.dbf" />
+    <None Remove="Data\Source\vuslnz.dbf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Data\Source\DocumTip.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\doplata.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\FUNSPR.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\IM.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\IMG.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\IMM.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\LORAPTABLE.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\mds.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\NSPTIP.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\OTC.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\OTCG.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\otcm.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\OTCSPL.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\PfrRequests\pfrrequests.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\PODPISI.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\raion.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\RAITIP.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\RECORDS.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\reestr.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\regiontip.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\regreest.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\REGSVDRE.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\reshenie.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\SOBESY.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\stag.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\SVODREES.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\ULCTIP.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocdolg.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\VocGorod.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\VocIndex.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\VOCNASP.DBF">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocnsp.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocorg.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocpspkem.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocraion.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocregion.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vocstrana.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\voculic.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Source\vuslnz.dbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetDBF" Version="5.0.4" />
+    <PackageReference Include="dotnetdbf.enumerable" Version="5.0.4" />
+    <PackageReference Include="Dynamitey" Version="2.0.9.136" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AisBenefits.Infrastructure\AisBenefits.Infrastructure.csproj" />
+    <ProjectReference Include="..\DataLayer.Infrastructure\DataLayer.Infrastructure.csproj" />
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+  </ItemGroup>
+
+</Project>

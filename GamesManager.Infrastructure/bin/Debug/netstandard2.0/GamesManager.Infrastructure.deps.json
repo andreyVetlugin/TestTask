@@ -569,6 +569,7 @@
       },
       "DataLayer.Infrastructure/1.0.0": {
         "dependencies": {
+          "DataLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "2.1.4",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.1.2"
         },
