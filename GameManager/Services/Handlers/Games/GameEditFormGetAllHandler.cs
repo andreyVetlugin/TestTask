@@ -11,13 +11,15 @@ namespace GamesManager.Services.Handlers.Games
 {
     public class GameEditFormGetAllHandler : GameEditFormBaseHandler
     {
-        public GameEditFormGetAllHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext) : base(writeDbContext, readDbContext)
+        public GameEditFormGetAllHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext, DataValidator dataValidator) : base(writeDbContext, readDbContext, dataValidator)
         {
         }
 
         public ModelDataResult<List<GameEditForm>> Handle()
         {
             var games = GameEditForm.CreateFromExistingGames(readDbContext).ToList();
+
+            LogOperationInfo(PostOperationType.GiveGamesFromDb, Guid.Empty);
             return ModelDataResult<List<GameEditForm>>.BuildSucces(games);
         }
     }

@@ -13,7 +13,7 @@ namespace GamesManager.Services.Handlers.Games
 {
     public class GameEditFormRemoveHandler : GameEditFormBaseHandler
     {
-        public GameEditFormRemoveHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext) : base(writeDbContext, readDbContext)
+        public GameEditFormRemoveHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext,DataValidator dataValidator) : base(writeDbContext, readDbContext,dataValidator)
         { 
         }
 

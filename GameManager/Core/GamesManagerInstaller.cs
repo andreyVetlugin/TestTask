@@ -13,7 +13,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
+using GamesManager.Services.Handlers;
+using GamesManager.Infrastructure.Services;
 
 namespace GamesManager.Core
 {
@@ -57,7 +58,9 @@ namespace GamesManager.Core
                 .AddScoped<GameEditFormGetHandler>()
                 .AddScoped<GameEditFormEditHandler>()
                 .AddScoped<GameEditFormGetAllHandler>()
-                .AddScoped<GameEditFormRemoveHandler>();
+                .AddScoped<GameEditFormRemoveHandler>()
+                .AddScoped<DataValidator>();
+                
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); // удалить
 

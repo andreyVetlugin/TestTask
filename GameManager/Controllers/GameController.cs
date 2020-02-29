@@ -24,18 +24,13 @@ namespace GamesManager.Controllers
         private readonly GameEditFormGetAllHandler gameEditFormGetAllHandler;
         private readonly GameEditFormGetHandler gameEditFormGetHandler;
         private readonly GameEditFormRemoveHandler gameEditFormRemoveHandler;
-        private readonly IReadDbContext<IDbEntity> readDbContext;
-        private readonly IWriteDbContext<IDbEntity> writeDbContext;
-
+        
 
         public GamesController
-            (IReadDbContext<IDbEntity> readDbContext, IWriteDbContext<IDbEntity> writeDbContext, 
-            IGameEditFormCreateHandler gameEditFormCreateHandler, GameEditFormGetAllHandler gameEditFormGetAllHandler, 
+            (IGameEditFormCreateHandler gameEditFormCreateHandler, GameEditFormGetAllHandler gameEditFormGetAllHandler, 
             GameEditFormGetHandler gameEditFormGetHandler, GameEditFormRemoveHandler gameEditFormRemoveHandler,
-            GameEditFormEditHandler gameEditFormEditHandler)// : base(repo)
+            GameEditFormEditHandler gameEditFormEditHandler)
         {
-            this.readDbContext = readDbContext;
-            this.writeDbContext = writeDbContext;
             this.gameEditFormCreateHandler = gameEditFormCreateHandler;
             this.gameEditFormGetAllHandler = gameEditFormGetAllHandler;
             this.gameEditFormGetHandler = gameEditFormGetHandler;
@@ -47,21 +42,18 @@ namespace GamesManager.Controllers
         public IActionResult GetAll()
         {
             var result = gameEditFormGetAllHandler.Handle();
-            return ApiModelResult.Create(result);
-            //var result = ModelDataResult<List<GameEditForm>>.BuildSucces(GameEditForm.CreateFromExistingGames(readDbContext).ToList());
-            //return ApiModelResult.Create(result);
+            return ApiModelResult.Create(result);            
         }
 
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(Guid id)
         {
-            var result = gameEditFormGetHandler.Handle(id);
+            var result = gameEditFormGetHandler.Handle(id, ModelState);
             return ApiModelResult.Create(result);
         }
 
-        [HttpPost]
-        //[Route("create")]
+        [HttpPost]        
         public IActionResult Create(GameEditForm form)
         {
             var result = gameEditFormCreateHandler.Handle(form, ModelState);

@@ -16,7 +16,11 @@ namespace DataLayer.Entities
 
     public enum PostOperationType : byte
     {
-        
+        CreateNewGameIntoDb,
+        EditExistingGameFromDb,
+        GiveGameFromDb,
+        GiveGamesFromDb,
+        RemoveGameFromDb
     }
 
 }

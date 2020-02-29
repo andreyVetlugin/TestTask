@@ -1,39 +1,23 @@
 ﻿using DataLayer.Entities;
+using DataLayer.Infrastructure.DbContexts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GamesManager.Infrastructure.Services
 {
-    public interface ILogBuilder
-    {
-        
-        PostInfoLog BuildPostInfoLog(PostOperationType operationName, Guid EntityRootId);
-    }
-
-    public class LogBuilder : ILogBuilder
+    
+    public static class LogInfoBuilder
     {
 
-        //private readonly ICurrentUserProvider currentUserProvider;
-        //private readonly User currentUser;
-
-        //public LogBuilder(ICurrentUserProvider currentUserProvider)
-        //{
-        //    this.currentUserProvider = currentUserProvider;
-        //    currentUser = currentUserProvider.GetCurrentUser();
-        //}
-
-                      
-
-        public PostInfoLog BuildPostInfoLog(PostOperationType operationName, Guid entityRootId)
+        public static PostInfoLog BuildLogPostInfo(PostOperationType operationType, Guid objectId)
         {
             var infoLog = new PostInfoLog
             {
-                Id = Guid.NewGuid(),
-                //UserId = currentUser.Id,
+                Id = Guid.NewGuid(),                
                 Date = DateTime.Now,
-                Operation = operationName,
-                EntityRootId = entityRootId
+                Operation = operationType,
+                EntityRootId = objectId
             };
             return infoLog;
         }

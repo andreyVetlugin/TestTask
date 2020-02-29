@@ -18,13 +18,13 @@ namespace GamesManager.Models.Games
         [Display(Name = "Название игры"), Required(ErrorMessage = "Введите {0}")]
         public string Title { get; set; }
         [Display(Name = "Дата релиза"), Required(ErrorMessage = "Введите Дату релиза")]
-        public DateTime ReleaseDate { get; set; } //тип ???? нужна ли проверка ///на существование ? 
+        public DateTime ReleaseDate { get; set; }
         [Display(Name = "Жанры игры"), Required(ErrorMessage = "Введите хоть один игровой жанр")]
-        public string GameGenres { get; set; } //???    //List<Genre>?
+        public string GameGenres { get; set; }
         [Display(Name = "Наименование издателя"), Required(ErrorMessage = "Введите {0}")]
         public string Publisher { get; set; }
 
-        public static GameEditForm CreateFromGame(Game game) // засунуть в класс GameEditFormHelper????? 
+        public static GameEditForm CreateFromGame(Game game)
         {                   //где-то здесь проверку на существование игры\игр
             //game = readDbContext<Game>
 
@@ -45,54 +45,46 @@ namespace GamesManager.Models.Games
                 .Select(game => CreateFromGame(game));
         }
 
-        //public static Game
-
         public static OperationResult JoinDependenciesToExistingGame(Game game, GameEditForm form, IReadDbContext<IDbEntity> readDbContext,IWriteDbContext<IDbEntity> writeDbContext) // вернуть игру или OperationResult?
         {
             var publisher = readDbContext.Get<Publisher>()
-                .Include(p=>p.Games)
+                //.Include(p=>p.Games)
                 .FirstOrDefault(p => p.Title == form.Publisher);
             if (publisher == null)
             {
                 publisher = new Publisher
                 {
+                    Games = new List<Game>{ game},
                     Title = form.Publisher
                 };
-            }
-            else
-            {
-                //writeDbContext.Attach(publisher);// проверить нужно ли 
-                publisher.Games.Add(game);
+                writeDbContext.Add(publisher);
             }
 
-            var gameGenres = form.GameGenres.Split(',')
+            //else
+            //{
+            //    //writeDbContext.Attach(publisher);// проверить нужно ли  ВКЛЮЧИТЬ ДЛЯ КРИЭЙТ
+            //    //publisher.Games.Add(game);
+            //}
+
+            var genresFromForm = form.GameGenres.Split(',')
                 .Select(s => s.Trim())
                 .Select(genreTitleFromForm =>
                 {                       // метод в дб GetFirstOrDefault<T>(func<> // функция для firstOrDefault)
                     var genreFromDb = readDbContext.Get<Genre>().FirstOrDefault(g => g.GenreTitle == genreTitleFromForm);
 
-                    if (genreFromDb != null)
+                    if (genreFromDb == null)
                     {
-                       // writeDbContext.Attach(genreFromDb);
-                        return new GameGenre
-                        {
-                            Game = game,
-                            Genre = genreFromDb
-                        };
+                        genreFromDb = new Genre { GenreTitle = genreTitleFromForm ,Id = Guid.NewGuid()};
                     }
+                    return genreFromDb;
+                });
 
-                    return new GameGenre
-                    {
-                        Game = game,
-                        Genre = new Genre
-                        {
-                            GenreTitle = genreTitleFromForm
-                        }
-                    };
-                }).ToList();
-
-            game.GameGenres = gameGenres;
-            game.Publisher = publisher;
+            var gameGenresAlredyInDb = genresFromForm
+                .Where(genre => readDbContext.Get<GameGenre>().Any(gg => gg.GenreId == gg.Id));
+                
+            genresFromForm.
+            
+            game.PublisherID = publisher.Id;
             return OperationResult.BuildSuccess(UnitOfWork.None());
         }
     }

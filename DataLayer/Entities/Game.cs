@@ -17,6 +17,7 @@ namespace DataLayer.Entities
 
         public List<GameGenre> GameGenres { get; set; }
 
+        public Guid PublisherID { get; set; }
         public Publisher Publisher { get; set; }
 
     }

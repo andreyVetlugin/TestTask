@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Handlers\Publishers\**" />
+    <Content Remove="Services\Handlers\Publishers\**" />
+    <EmbeddedResource Remove="Services\Handlers\Publishers\**" />
+    <None Remove="Services\Handlers\Publishers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.0" />
@@ -14,10 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GamesManager.Infrastructure\GamesManager.Infrastructure.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Handlers\Publishers\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1Development_1json__JSONSchema="http://json.schemastore.org/BizTalkServerApplicationSchema" /></VisualStudio></ProjectExtensions>

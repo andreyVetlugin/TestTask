@@ -17,3 +17,6 @@ C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\DataLayer.Infrastructure\obj\Deb
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.dll
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.pdb
 C:\Users\Evgeniya\Desktop\Andrey\from_git_2\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.csproj.CopyComplete
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.dll
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\DataLayer.Infrastructure\bin\Debug\netstandard2.0\DataLayer.pdb
+C:\Users\Dell\Desktop\TestFromWorkday2\TestTask\DataLayer.Infrastructure\obj\Debug\netstandard2.0\DataLayer.Infrastructure.csproj.CopyComplete

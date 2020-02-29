@@ -10,14 +10,15 @@ namespace GamesManager.Services.Handlers.Games
 {
     public class GameEditFormCreateHandler: GameEditFormBaseHandler,IGameEditFormCreateHandler
     {
-        public GameEditFormCreateHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext):base(writeDbContext,readDbContext)
+        public GameEditFormCreateHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext, DataValidator dataValidator):base(writeDbContext,readDbContext, dataValidator)
         {
         }        
         
         public OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
         {
-            if (!modelState.IsValid)
-                return OperationResult.BuildFormError("Ошибка. Проверьте формат введеных данных");
+            var stateValidationResult = dataValidator.ValidateModelState(modelState);
+            if (!stateValidationResult.Ok)
+                return stateValidationResult;
             
             var game = new Game
             {
@@ -26,10 +27,11 @@ namespace GamesManager.Services.Handlers.Games
                 ReleaseDate = form.ReleaseDate
             };
 
-            var result = GameEditForm.JoinDependenciesToExistingGame(game, form,readDbContext,writeDbContext); // использовать как-то этот operationResult?
+            var result = GameEditForm.JoinDependenciesToExistingGame(game, form,readDbContext,writeDbContext);
             writeDbContext.Add(game);
-            //return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
-            return OperationResult.BuildSuccess(UnitOfWork.Complex(result,UnitOfWork.WriteDbContext(writeDbContext))); // проверить сохраняется ли в бд
+
+            //LogOperationInfo(PostOperationType.CreateNewGameIntoDb, game.Id);
+            return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
         }
     }
 }

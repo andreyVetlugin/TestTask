@@ -15,9 +15,15 @@ namespace GamesManager.Services.Handlers.Games
     {
         protected IReadDbContext<IDbEntity> readDbContext;
         protected IWriteDbContext<IDbEntity> writeDbContext;
-
-        public GameEditFormBaseHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext)
+        protected DataValidator dataValidator;
+        protected void LogOperationInfo(PostOperationType operationType, Guid objectId)
         {
+            writeDbContext.Add<IDbEntity>(LogInfoBuilder.BuildLogPostInfo(operationType,objectId));
+        }
+
+        public GameEditFormBaseHandler(IWriteDbContext<IDbEntity> writeDbContext, IReadDbContext<IDbEntity> readDbContext, DataValidator dataValidator)
+        {
+            this.dataValidator = dataValidator;
             this.readDbContext = readDbContext;
             this.writeDbContext = writeDbContext; 
         }
