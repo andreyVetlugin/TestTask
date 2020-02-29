@@ -23,7 +23,7 @@ namespace GamesManager.Services.Handlers.Games
                 return validatinStateResult;
 
             var game = readDbContext.Get<Game>()
-                .IncludeDependencies()
+            //    .IncludeDependencies() //  ИЛИ ЭТО
                 .FirstOrDefault(g => g.Id == form.Id);
 
             var validationGameResult = dataValidator.ValidateGame(game, modelState);
@@ -32,7 +32,7 @@ namespace GamesManager.Services.Handlers.Games
 
             writeDbContext.Attach(game);
             game.ReleaseDate = form.ReleaseDate;
-            game.GameGenres.Clear();
+            //game.GameGenres.Clear();
             var result = GameEditForm.JoinDependenciesToExistingGame(game, form, readDbContext, writeDbContext);
 
 

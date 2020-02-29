@@ -23,18 +23,18 @@ namespace GamesManager.Controllers
         private readonly GameEditFormEditHandler gameEditFormEditHandler;
         private readonly GameEditFormGetAllHandler gameEditFormGetAllHandler;
         private readonly GameEditFormGetHandler gameEditFormGetHandler;
-        private readonly GameEditFormRemoveHandler gameEditFormRemoveHandler;
+        private readonly GameEditFormDeleteHandler gameEditFormDeleteHandler;
         
 
         public GamesController
             (IGameEditFormCreateHandler gameEditFormCreateHandler, GameEditFormGetAllHandler gameEditFormGetAllHandler, 
-            GameEditFormGetHandler gameEditFormGetHandler, GameEditFormRemoveHandler gameEditFormRemoveHandler,
+            GameEditFormGetHandler gameEditFormGetHandler, GameEditFormDeleteHandler gameEditFormDeleteHandler,
             GameEditFormEditHandler gameEditFormEditHandler)
         {
             this.gameEditFormCreateHandler = gameEditFormCreateHandler;
             this.gameEditFormGetAllHandler = gameEditFormGetAllHandler;
             this.gameEditFormGetHandler = gameEditFormGetHandler;
-            this.gameEditFormRemoveHandler = gameEditFormRemoveHandler;
+            this.gameEditFormDeleteHandler = gameEditFormDeleteHandler;
             this.gameEditFormEditHandler = gameEditFormEditHandler;
         }
 
@@ -64,6 +64,14 @@ namespace GamesManager.Controllers
         public IActionResult Edit(GameEditForm form)
         {
             var result = gameEditFormEditHandler.Handle(form, ModelState);
+            return new ApiOperationResult(result);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            var result = gameEditFormDeleteHandler.Handle(id, ModelState);
             return new ApiOperationResult(result);
         }
 

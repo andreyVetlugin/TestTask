@@ -153,14 +153,16 @@
         }
 
         async function DeleteGame(id) {
+            resetErrors();
             const response = await fetch("/api/games/" + id, {
                 method: "DELETE",
                 headers: { "Accept": "application/json" }
-            });
-            //if (response.ok === true) {
-            //    //const user = await response.json();
-            //    //document.querySelector("tr[data-rowid='" + user.id + "']").remove();
-            //}
+            });            
+            if (response.ok === true) {
+                location.reload();
+                //const user = await response.json();
+                //document.querySelector("tr[data-rowid='" + user.id + "']").remove();
+            }
         }
 
         function reset() {

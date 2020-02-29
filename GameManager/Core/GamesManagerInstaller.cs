@@ -58,7 +58,7 @@ namespace GamesManager.Core
                 .AddScoped<GameEditFormGetHandler>()
                 .AddScoped<GameEditFormEditHandler>()
                 .AddScoped<GameEditFormGetAllHandler>()
-                .AddScoped<GameEditFormRemoveHandler>()
+                .AddScoped<GameEditFormDeleteHandler>()
                 .AddScoped<DataValidator>();
                 
 

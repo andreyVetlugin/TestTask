@@ -63,12 +63,12 @@ namespace GamesManager.Models.Games
             // удалить связанные записи 
 
 
-            //var linkedGameGenresToCurrentGame = readDbContext.Get<GameGenre>() // ПОЧЕМУ ЕСЛИ ЭТО РАСКОМЕНТИТЬ НЕ РОБИТ ??? 
-            //    .Where(gg => gg.GameId == game.Id).ToArray();          
-                //.Select(gg => new GameGenre { Id = gg.Id});           
-            
-            //writeDbContext.RemoveRange(linkedGameGenresToCurrentGame.ToArray());    
-            
+            var linkedGameGenresToCurrentGame = readDbContext.Get<GameGenre>() // ПОЧЕМУ ЕСЛИ ЭТО РАСКОМЕНТИТЬ НЕ РОБИТ ??? 
+                .Where(gg => gg.GameId == game.Id).ToArray();          
+                ////.Select(gg => new GameGenre { Id = gg.Id });
+
+            writeDbContext.RemoveRange(linkedGameGenresToCurrentGame.ToArray());
+
             var genresFromForm = form.GameGenres.Split(',')
                 .Select(s => s.Trim())
                 .Select(genreTitleFromForm =>
