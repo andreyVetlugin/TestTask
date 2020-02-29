@@ -60,12 +60,15 @@ namespace GamesManager.Models.Games
                 writeDbContext.Add(publisher);
             }
 
-            //else
-            //{
-            //    //writeDbContext.Attach(publisher);// проверить нужно ли  ВКЛЮЧИТЬ ДЛЯ КРИЭЙТ
-            //    //publisher.Games.Add(game);
-            //}
+            // удалить связанные записи 
 
+
+            //var linkedGameGenresToCurrentGame = readDbContext.Get<GameGenre>() // ПОЧЕМУ ЕСЛИ ЭТО РАСКОМЕНТИТЬ НЕ РОБИТ ??? 
+            //    .Where(gg => gg.GameId == game.Id).ToArray();          
+                //.Select(gg => new GameGenre { Id = gg.Id});           
+            
+            //writeDbContext.RemoveRange(linkedGameGenresToCurrentGame.ToArray());    
+            
             var genresFromForm = form.GameGenres.Split(',')
                 .Select(s => s.Trim())
                 .Select(genreTitleFromForm =>
@@ -75,14 +78,14 @@ namespace GamesManager.Models.Games
                     if (genreFromDb == null)
                     {
                         genreFromDb = new Genre { GenreTitle = genreTitleFromForm ,Id = Guid.NewGuid()};
+                        writeDbContext.Add(genreFromDb);
                     }
                     return genreFromDb;
-                });
+                }).ToList();
 
-            var gameGenresAlredyInDb = genresFromForm
-                .Where(genre => readDbContext.Get<GameGenre>().Any(gg => gg.GenreId == gg.Id));
-                
-            genresFromForm.
+            genresFromForm.ForEach(g => writeDbContext.Add(new GameGenre { GameId = game.Id, GenreId = g.Id }));
+
+
             
             game.PublisherID = publisher.Id;
             return OperationResult.BuildSuccess(UnitOfWork.None());

@@ -32,6 +32,7 @@ namespace GamesManager.Services.Handlers.Games
 
             writeDbContext.Attach(game);
             game.ReleaseDate = form.ReleaseDate;
+            game.GameGenres.Clear();
             var result = GameEditForm.JoinDependenciesToExistingGame(game, form, readDbContext, writeDbContext);
 
 
