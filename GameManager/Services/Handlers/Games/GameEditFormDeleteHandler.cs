@@ -26,6 +26,7 @@ namespace GamesManager.Services.Handlers.Games
             if (!validationStateResult.Ok)
                 return validationStateResult;
 
+            LogOperationInfo(PostOperationType.RemoveGameFromDb,game.Id);
             return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
         }
     }

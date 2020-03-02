@@ -1,0 +1,342 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits\\AisBenefits.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\AisBenefits.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\AisBenefits.Infrastructure.csproj",
+        "projectName": "AisBenefits.Infrastructure",
+        "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\AisBenefits.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj"
+              },
+              "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Security.Cryptography.Pkcs": {
+              "target": "Package",
+              "version": "[4.5.2, )"
+            },
+            "System.Security.Cryptography.X509Certificates": {
+              "target": "Package",
+              "version": "[4.3.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits\\AisBenefits.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits\\AisBenefits.csproj",
+        "projectName": "AisBenefits",
+        "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits\\AisBenefits.csproj",
+        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\AisBenefits.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\AisBenefits.Infrastructure\\AisBenefits.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Npgsql.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Serilog.Extensions.Logging.File": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
+        "projectName": "DataLayer.Infrastructure",
+        "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\DataLayer.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\DataLayer.csproj",
+        "projectName": "DataLayer",
+        "projectPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Evgeniya\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Evgeniya\\Documents\\Source\\Repos\\AisBenefits\\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\\DataLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Evgeniya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

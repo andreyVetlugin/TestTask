@@ -68,10 +68,21 @@
                 form.elements["id"].value = game.id;
                 form.elements["title"].value = game.title;
                 form.elements["genres"].value = game.gameGenres;
-                form.elements["releaseDate"].value = game.releaseDate;
-                //let releasedate = Date(game.releaseDate)
+                //form.elements["releaseDate"].value = game.releaseDate;
+
+                //var test = new Date(game.releaseDate);
+
+                //var test2 = game.ReleaseDate;
+
+                //var year = test.getFullYear();
+
+                //var month = test.getMonth();
+
+                //var day = test.getDate();
+
+
                 //let date = ''+releasedate.getFullYear()+'-'+releasedate.getMonth()+'-'+releasedate.getDate();
-                //form.elements["releaseDate"].value = date;
+                form.elements["releaseDate"].value = GetFormDate(new Date(game.releaseDate));//testDate; 
                 form.elements["publisher"].value = game.publisher;
             } else {
                 const errorData = await response.json();
@@ -82,6 +93,17 @@
             }
         }
 
+        function GetFormDate(date) {
+            var d = new Date(date.getFullYear(),date.getMonth(),date.getDate());
+
+            return ("0000" +
+                d.getFullYear()).slice(-4) +
+                "-" +
+                ("00" + (date.getMonth() + 1)).slice(-2) +
+                "-" +
+                ("00" + date.getDate()).slice(-2);
+
+        }
 
         async function CreateGame(title, releaseDate, genres, publisher) {
             resetErrors();
@@ -203,7 +225,7 @@
             tr.append(genresTd);
 
             const dateId = document.createElement("td");
-            dateId.append(game.releaseDate);
+            dateId.append(GetFormDate(new Date(game.releaseDate)));
             tr.append(dateId);
 
             const genreId = document.createElement("td");

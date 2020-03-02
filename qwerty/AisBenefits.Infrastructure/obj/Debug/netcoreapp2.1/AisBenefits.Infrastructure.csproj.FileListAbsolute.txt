@@ -1,0 +1,13 @@
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\AisBenefits.Infrastructure.deps.json
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\AisBenefits.Infrastructure.dll
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\AisBenefits.Infrastructure.pdb
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.dll
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.Infrastructure.dll
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.Infrastructure.pdb
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.pdb
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.AssemblyInfo.cs
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.csproj.CopyComplete
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.dll
+C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\AisBenefits.Infrastructure\obj\Debug\netcoreapp2.1\AisBenefits.Infrastructure.pdb

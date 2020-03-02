@@ -30,7 +30,7 @@ namespace GamesManager.Services.Handlers.Games
             var result = GameEditForm.JoinDependenciesToExistingGame(game, form,readDbContext,writeDbContext);
             writeDbContext.Add(game);
 
-            //LogOperationInfo(PostOperationType.CreateNewGameIntoDb, game.Id);
+            LogOperationInfo(PostOperationType.CreateNewGameIntoDb, game.Id);
             return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
         }
     }
