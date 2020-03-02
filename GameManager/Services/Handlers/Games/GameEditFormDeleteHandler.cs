@@ -22,6 +22,10 @@ namespace GamesManager.Services.Handlers.Games
             var game = readDbContext.Get<Game>().FirstOrDefault(g => g.Id == gameId);
             writeDbContext.Remove(game);
 
+            var validationStateResult = dataValidator.ValidateGame(game, modelState);
+            if (!validationStateResult.Ok)
+                return validationStateResult;
+
             return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
         }
     }
