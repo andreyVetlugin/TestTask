@@ -9,11 +9,13 @@ using GamesManager.Models.Games;
 
 namespace GamesManager.Services.Handlers.Games
 {
-    public class GameEditFormEditHandler:GameEditFormBaseHandler
+    public class GameEditFormEditHandler : GameEditFormBaseHandler
     {
-        public GameEditFormEditHandler(IReadDbContext<IDbEntity> readDbContext, IWriteDbContext<IDbEntity> writeDbContext, DataValidator dataValidator):base(writeDbContext,readDbContext,dataValidator)
-        { 
-            
+        public GameEditFormEditHandler(IReadDbContext<IDbEntity> readDbContext,
+            IWriteDbContext<IDbEntity> writeDbContext, DataValidator dataValidator) : base(writeDbContext,
+            readDbContext, dataValidator)
+        {
+
         }
 
         public OperationResult Handle(GameEditForm form, ModelStateDictionary modelState)
@@ -23,7 +25,7 @@ namespace GamesManager.Services.Handlers.Games
                 return validatinStateResult;
 
             var game = readDbContext.Get<Game>()
-            //    .IncludeDependencies() //  ИЛИ ЭТО
+                    //.IncludeDependencies() //  ИЛИ ЭТО
                 .FirstOrDefault(g => g.Id == form.Id);
 
             var validationGameResult = dataValidator.ValidateGame(game, modelState);
@@ -36,7 +38,7 @@ namespace GamesManager.Services.Handlers.Games
             var result = GameEditForm.JoinDependenciesToExistingGame(game, form, readDbContext, writeDbContext);
 
 
-            LogOperationInfo(PostOperationType.EditExistingGameFromDb,game.Id);
+            LogOperationInfo(PostOperationType.EditExistingGameFromDb, game.Id);
             return OperationResult.BuildSuccess(UnitOfWork.WriteDbContext(writeDbContext));
         }
     }

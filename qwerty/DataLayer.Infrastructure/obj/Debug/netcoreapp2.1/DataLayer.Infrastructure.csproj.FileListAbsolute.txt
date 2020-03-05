@@ -1,8 +1,0 @@
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.Infrastructure.deps.json
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.Infrastructure.dll
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\bin\Debug\netcoreapp2.1\DataLayer.Infrastructure.pdb
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\obj\Debug\netcoreapp2.1\DataLayer.Infrastructure.csprojAssemblyReference.cache
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\obj\Debug\netcoreapp2.1\DataLayer.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\obj\Debug\netcoreapp2.1\DataLayer.Infrastructure.AssemblyInfo.cs
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\obj\Debug\netcoreapp2.1\DataLayer.Infrastructure.dll
-C:\Users\Evgeniya\Documents\Source\Repos\AisBenefits\AisBenefits-master-6f6661dcbd3c743855ed6d6c407ac31d825ebfbe\DataLayer.Infrastructure\obj\Debug\netcoreapp2.1\DataLayer.Infrastructure.pdb

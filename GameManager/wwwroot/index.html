@@ -29,7 +29,7 @@
         </div>
         <div class="panel-body">
             <button type="submit" id="submit" class="btn btn-primary">Добавить</button>
-            <a id="reset" class="btn btn-primary">Сбросить</a>
+            <a type="submit" id="reset" class="btn btn-primary">Сбросить</a>
         </div>
     </form>
     <table class="table table-condensed table-striped  col-md-6">
@@ -154,23 +154,48 @@
 
         async function EditGame(gameId, title, releaseDate, genres, publisher) {
             resetErrors();
-            const response = await fetch("api/games", {
-                method: "PUT",
-                headers: { "Accept": "application/json", "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    Id: gameId,
-                    Title: title,
-                    ReleaseDate: releaseDate,
-                    GameGenres: genres,
-                    Publisher: publisher
-                })
-            });
+            const response = await fetch("api/games",
+                {
+                    method: "PUT",
+                    headers: { "Accept": "application/json", "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        Id: gameId,
+                        Title: title,
+                        ReleaseDate: releaseDate,
+                        GameGenres: genres,
+                        Publisher: publisher
+                    })
+                });
 
-            if (response.ok === true) {          /////////// если фолс - вывести ошибку                
+            if (response.ok === true) { /////////// если фолс - вывести ошибку                
                 //const game = await response.json();
                 reset();
                 location.reload();
                 //document.querySelector("tr[data-rowid='" + user.id + "']").replaceWith(row(user));
+            } else {
+                const errorData = await response.json();
+                console.log("errors", errorData);
+                if (errorData) {
+                    // ошибки вследствие валидации по атрибутам
+                    if (errorData.errors) {
+                        if (errorData.errors["Title"]) {
+                            addError(errorData.errors["Title"]);
+                        }
+
+                        if (errorData.errors["GameGenres"]) {
+                            addError(errorData.errors["GameGenres"]);
+                        }
+
+                        if (errorData.errors["ReleaseDate"]) {
+                            addError(errorData.errors["ReleaseDate"]);
+                        }
+
+                        if (errorData.errors["Publisher"]) {
+                            addError(errorData.errors["Publisher"]);
+                        }
+                    }
+                    document.getElementById("errors").style.display = "block";
+                }
             }
         }
 
